@@ -1,6 +1,6 @@
 # Simple API Rest
 
-Small and simple studies project, written with *TypeScript*, with *express* like main
+Small and simple study project, written with *TypeScript*, with *express* like main
 *JavaScript* library.
 
 > Based in course/tutorial:

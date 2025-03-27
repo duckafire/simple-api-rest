@@ -1,9 +1,3 @@
-import express from "express";
-
-const server = express();
-
-server.get("/", (request, response) => {
-	return response.send("Hello world!");
-});
+import { server } from "./server/index";
 
 server.listen(process.env.PORT || 7777, () => console.log("Running!"));
