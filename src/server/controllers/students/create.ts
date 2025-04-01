@@ -35,6 +35,6 @@ export const validBody: RequestHandler = async (request:Request<{}, {}, IStudent
 }
 
 export const create = (request: Request, response: Response) => {
-	const ok = '{ "message": "work in progress" }';
+	const ok = { message: "work in progress" };
 	return response.status(StatusCodes.OK).json(ok);
 }
