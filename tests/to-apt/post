@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+declare -r url=$1
+declare -r json=$2
+
+echo $(curl -s -X POST -H "Content-Type: application/json" -d "$json" "$url") | jq .
