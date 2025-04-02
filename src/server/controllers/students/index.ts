@@ -1,3 +1,9 @@
 import * as create from "./create";
 
-export const students = {...create};
+interface IStructure {
+	create: any;
+}
+
+export const students: IStructure = {
+	create: {...create},
+}

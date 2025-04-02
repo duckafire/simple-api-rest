@@ -1,13 +1,13 @@
 import { Router } from "express";
 
-import { Controllers } from "./../controllers";
+import { Controllers } from "../controllers";
 
 const router = Router();
 
 router.post(
 	"/students/create",
-	Controllers.students.validBody,
-	Controllers.students.create
+	Controllers.students.create.validateBody,
+	Controllers.students.create.run,
 );
 
 router.use(Controllers.inexistentEndpoint);
