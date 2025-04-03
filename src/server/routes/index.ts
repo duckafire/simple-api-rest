@@ -6,7 +6,7 @@ const router = Router();
 
 router.post(
 	"/students/create",
-	Controllers.students.create.validateBody,
+	Controllers.students.create.validations,
 	Controllers.students.create.run,
 );
 

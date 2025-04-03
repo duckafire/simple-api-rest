@@ -1,9 +1,5 @@
-import { validation, IValidation } from "./validation";
+import { validation } from "./validation";
 
-interface IStructure {
-	validation: IValidation;
-}
-
-export const Midlewares: IStructure = {
+export const Midlewares = {
 	validation,
 };
