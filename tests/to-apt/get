@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-declare -r url=$1
-
-echo $(curl -s -H "Content-Type: application/json" "$url") | jq .
