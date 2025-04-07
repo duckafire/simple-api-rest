@@ -2,7 +2,7 @@ import { Request, RequestHandler, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import * as yup from "yup";
 
-import { Midlewares } from "../../shared/midleware";
+import { Midlewares } from "../../shared/midlewares";
 
 interface IStudent {
 	name: string;
@@ -18,6 +18,6 @@ export const validations = Midlewares.validation((getSchema) => ({
 	})),
 }));
 
-export const run = (request: Request, response: Response) => {
-	return response.status(StatusCodes.NOT_IMPLEMENTED).json({ message: "work in progress" });
+export const run = (req: Request, res: Response) => {
+	return res.status(StatusCodes.NOT_IMPLEMENTED).json({ message: "work in progress" });
 }
