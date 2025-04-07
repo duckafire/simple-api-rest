@@ -16,11 +16,8 @@ export const validations = Midlewares.validation((getSchema) => ({
 		birthday: yup.string().matches(/^[0-9]{4}-[0-9]{2}-[0-9]{2}$/).required(),
 		classId:  yup.string().matches(/^[1-3][A-G]$/).required(),
 	})),
-	// query
-	// ...
 }));
 
 export const run = (request: Request, response: Response) => {
-	const ok = { message: "work in progress" };
-	return response.status(StatusCodes.OK).json(ok);
+	return response.status(StatusCodes.NOT_IMPLEMENTED).json({ message: "work in progress" });
 }
