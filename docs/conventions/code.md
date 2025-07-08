@@ -48,8 +48,10 @@ understand without assistance or a lot of reading time.
 ### Typing
 
 1. All that can be typed it must be typed.
+1. Avoid "function types", add manually the types to parametes and the return.
 1. `never` and `unknown` must be priority in relation to `void` and `any`.
 1. Avoid to use `as` to change the type of a value.
+1. Avoid the use of complex types.
 
 ### Importing
 
@@ -71,7 +73,7 @@ it export an object with functions and object.
 ### The main function
 
 1. `main` function must be present in the end of file.
-1. `main` must be declared and exported simultaneous.
+1. `main` must be exported after to be declared.
 
 ## Tests (only JavaScript)
 

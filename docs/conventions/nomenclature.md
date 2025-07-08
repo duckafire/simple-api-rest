@@ -49,6 +49,10 @@ name.
 1. Use `is` or `has` as prefixed for variables, properties, functions and methods that
 have/return a boolean value.
 
+> [!IMPORTANT]
+> Identifiers declared with `const` that can be incremented, like objects and arrays, they
+> must not be considered constants, then they must not follow the constants Case Style.
+
 ## Source code (only TypeScript)
 
 1. The use of `PascalCase` is extended to:
@@ -58,3 +62,4 @@ have/return a boolean value.
 ## Tests (only JavaScript)
 
 * *None.*
+
