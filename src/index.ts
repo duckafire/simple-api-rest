@@ -1,7 +1,19 @@
-import { server } from "./server";
+import express from "express";
+import dotenv  from "dotenv";
 
-const PORT = (process.env.PORT || 7777);
+import {default as router} from "./routes";
 
-server.listen(PORT, () => {
-	console.log("Running at the port: " + PORT);
+dotenv.config();
+
+if(process.env.PORT === undefined)
+	throw new Error("PORT not defined");
+
+const server = express();
+
+server.use(express.json());
+server.use(router);
+
+server.listen(process.env.PORT, () => {
+	console.log("[simple-api-rest] STARTED! At " + new Date());
 });
+
