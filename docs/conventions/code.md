@@ -4,28 +4,26 @@
 
 ### Syntax/semantic choices
 
-1. Semicolon must be used after:
+1. Use semicolon after:
 	* Values attribution to variables and like.
 	* Importation/exportation of contents.
 	* Functions call.
-
-1. `var` must not be used in declarations.
+	* Ternary operations.
+1. Do not use `var` in declarations.
 1. Functions must be declared like Arrow Functions and stored in constants.
-1. Avoid declarations inside of loops.
-1. Double quotes must be used to defined strings.
+1. Avoid declarations inside of any loops type.
+1. Do not use single quotes to defined strings, use double quotes.
 1. The indentation must be done with tabulations, one to each indentation level.
 
 ### POO
 
-1. The use/declaration of classes must be avoided. Prefer the functional paradigm.
-1. `get` and `set` must not be used to declare class properties.
+1. Declaration of classes must be avoided, prefer the functional paradigm.
+1. Do not use `get` and `set` to declare class properties.
 1. Properties and methods unnecessary publicly must be private.
-1. Public properties must be started only in the class Constructor. Case the preferred
-value are not reachable, `null` must be attributed.
-1. Private properties must be started only in the class environment or in the its
-Constructor.
+1. Properties must be started only in the class Constructor or in the "class environment".
+Case the preferred value are not reachable, `null` must be attributed.
 1. The use of properties and methods, inside their class, must be prefixed by `this`.
-1. Properties must not store functions.
+1. Avoid to store functions, classes and similar in properties.
 
 ### Clean code
 
@@ -33,13 +31,17 @@ Constructor.
 1. Avoid nested and long ternary operations.
 1. Files must depend only of NPM packages (exist two exception to TS files: `shared/`
 and `index.ts`).
-1. Comparison with `undefined` and `null` must be explicit - in order of that they
-do not be confused with boolean comparison. Use `===` to do this.
-1. Avoid to attribute `undefined` to variables and properties.
-1. Functions and classes must have only one responsibility.
+1. Comparison with `undefined` and `null` must be explicit.
+1. Avoid attribute `undefined` to identifiers.
+1. Single responsibility to functions and classes.
 1. Commentaries must be explain decisions which the finally is implicit, obscure or hard to
 understand without assistance or a lot of reading time.
 1. It is allowed and recommended to omit curly braces in single line blocks, when possible.
+
+### Importing
+
+1. Imports of NPM packages must be in top of files.
+1. Imports of local files must be below imports of NPM packages, separated by a empty line.
 
 ## Source code (only TypeScript)
 
@@ -48,32 +50,28 @@ understand without assistance or a lot of reading time.
 ### Typing
 
 1. All that can be typed it must be typed.
-1. Avoid "function types", add manually the types to parametes and the return.
+1. Avoid "function types", add manually the types to parameters and to the return.
 1. `never` and `unknown` must be priority in relation to `void` and `any`.
 1. Avoid to use `as` to change the type of a value.
 1. Avoid the use of complex types.
 
 ### Importing
 
-1. Imported folders must be suffixed by a slash.
-1. `as` must be used to rename importations, based in **nomenclature conventions**.
+1. Name of local imported files must be prefixed by `"./"`.
+1. Imported folders name must be suffixed by a slash.
 
 > [!NOTE]
-> Folders importations have the `index.ts`, of the folder, like target.
+> Imports that have a folder as target get the content of its `index.ts`.
 
 ### Exporting
 
 1. Files can depend of the `shared/` content.
-1. File can export in maximum one functions or class.
-1. The "exportation function (or class)" of a file must be named as `main` (or `Main` to
-classes).
-1. Files can export in maximum one function or class (`main`), except the `index.ts`, that
-it export an object with functions and object.
+1. Files can export in maximum one function, one class or one object, as `default`.
 
 ### The main function
 
-1. `main` function must be present in the end of file.
-1. `main` must be exported after to be declared.
+1. The `main` must be the last declarations in its file.
+1. `main` must be exported after to be declared, as `default`.
 
 ## Tests (only JavaScript)
 
