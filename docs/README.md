@@ -8,6 +8,7 @@ this project, in order to facilitate the general development of it.
 
 ### Pages
 
+* [REST principles](https://github.com/duckafire/simple-api-rest/tree/main/docs/rest-principles.md)
 * [Conventions](https://github.com/duckafire/simple-api-rest/tree/main/docs/conventions/)
 	* [Code](https://github.com/duckafire/simple-api-rest/blob/main/docs/conventions/code.md)
 	* [Nomenclature](https://github.com/duckafire/simple-api-rest/blob/main/docs/conventions/nomenclature.md)
