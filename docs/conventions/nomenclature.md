@@ -1,24 +1,26 @@
 # Code conventions
 
-## Directory/file name
+## Names
 
-In general mode, files that:
+### General
 
-* Export an object must be named like `index.ts`.
-* Export a function must be named in `cobol-case`.
-* Export a class must be named in `PascalCase`.
+1. Directories, files and endpoints must be to follow the `cobol-case`.
+1. `index.ts` is a reserved file name.
 
-> [!NOTE]
-> All folders must be have one `index.ts`. It is responsibly by import and
-> export all content exported by its neighbors, in an "object no typed" format.
+> [!IMPORTANT]
+> `index.ts` must import and to export all the content exported by its neighbors, in a
+> single object. If a neighbor export an object, it must be spreaded.
 
-The content of the `controllers/` have themselves nomenclature rules, that affect
-files and folder. It is reference to API endpoint, where the final word of the endpoint
-is a file and the other are folders, like:
+### Controllers
+
+1. Structure of the controllers must be similar to structure of their endpoints.
+1. Files must be suffixed by their HTTP Request Method (`<name>.<method>.ts`).
 
 ```
-foobar://foo.bar/person/worker/register
+# endpoint
+/person/worker/register
 
+# structure
 └ controllers/
     ├ person/
     │   ├ worker/
@@ -28,38 +30,31 @@ foobar://foo.bar/person/worker/register
     └ ?
 ```
 
-How showed above, between the file name and the file extent, it have a chunk, that
-indicate the HTTP Request Method used by the endpoint. It allow that multiple endpoints,
-with different request methods, they can exist in the some directory and with the some
-name.
+## Identifiers
 
-```
-<exportion-name>.<method>.ts
-```
+### General
 
-## General
-
-1. Identifiers must follow the Case Styles below.
-	* `PascalCase`: class names.
-	* `snake_case`: functions and methods (both must be compound).
-	* `SCREAMING_SNAKE_CASE`: constants (except those that store functions).
+1. Identifiers Case Styles:
+	* `PascalCase`: classes name.
+	* `snake_case`: functions/methods.
+	* `SCREAMING_SNAKE_CASE`: constants with non-incrementable values.
 	* `camelCase`: all other identifiers.
-
 1. Identifiers must be explanatory.
-1. Use `is` or `has` as prefixed for variables, properties, functions and methods that
-have/return a boolean value.
+1. Unused parameters must be named as `'_'`.
+1. Use `is`, `has`, `can`, `should` or `needs` as prefixed to boolean identifiers.
+1. Do not use uppercase characters in _response_ messages, except to constants names and
+identifiers value.
 
-> [!IMPORTANT]
-> Identifiers declared with `const` that can be incremented, like objects and arrays, they
-> must not be considered constants, then they must not follow the constants Case Style.
+### Source code (only TypeScript)
 
-## Source code (only TypeScript)
-
-1. The use of `PascalCase` is extended to:
+1. Also use `PascalCase` in:
 	* Interfaces (with `I` as prefix; `IFoo`).
 	* Types (with `T` as prefix; `TFoo`).
+1. Exported content must be named as `main`, in all files.
+1. Identifier that receive the exported content of a local file must be named with the file
+name, but in `camelCase`, instead `cobolCase`.
 
-## Tests (only JavaScript)
+### Tests (only JavaScript)
 
 * *None.*
 
