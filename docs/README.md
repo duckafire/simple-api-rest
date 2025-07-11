@@ -1,10 +1,10 @@
 # Documentation
 
-The target of this sub-directory is explain all "important" parts of
+The target of this sub-directory is to explain all "important" parts of
 this project, in order to facilitate the general development of it.
 
 > [!IMPORTANT]
-> This content must be updated EVERY that a new Git Tag is created.
+> This content must be updated EVERY time that a new Git Tag is created.
 
 ### Pages
 
@@ -45,7 +45,7 @@ simple-api-rest/
 │   │   ├ classes/
 │   │   │   ├ index.ts
 │   │   │   └ ?
-│   │   ├ midlewares/
+│   │   ├ middlewares/
 │   │   │   ├ index.ts
 │   │   │   └ ?
 │   ├ routes.ts
@@ -76,5 +76,5 @@ simple-api-rest/
 > * `[...]`: variable quantity of content (folders and files).
 
 > [!IMPORTANT]
-> If a directory that is showed in the map is not present in the project,
-> this meaning that there are no content to it.
+> If a directory that is shown in the map is not present in the project,
+> this means that there is no content for it.

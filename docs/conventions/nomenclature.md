@@ -4,17 +4,17 @@
 
 ### General
 
-1. Directories, files and endpoints must be to follow the `cobol-case`.
+1. Directories, files and endpoints must follow the `cobol-case`.
 1. `index.ts` is a reserved file name.
 
 > [!IMPORTANT]
-> `index.ts` must import and to export all the content exported by its neighbors, in a
-> single object. If a neighbor export an object, it must be spreaded.
+> `index.ts` must import and export all the content exported by its neighbors, in a
+> single object. If a neighbor exports an object, it must be spread.
 
 ### Controllers
 
-1. Structure of the controllers must be similar to structure of their endpoints.
-1. Files must be suffixed by their HTTP Request Method (`<name>.<method>.ts`).
+1. Structure of the controllers must be similar to the structure of their endpoints.
+1. Files must be suffixed with their HTTP Request Method (`<name>.<method>.ts`).
 
 ```
 # endpoint
@@ -51,7 +51,7 @@ identifiers value.
 	* Interfaces (with `I` as prefix; `IFoo`).
 	* Types (with `T` as prefix; `TFoo`).
 1. Exported content must be named as `main`, in all files.
-1. Identifier that receive the exported content of a local file must be named with the file
+1. Identifier that receives the exported content of a local file must be named with the file
 name, but in `camelCase`, instead `cobolCase`.
 
 ### Tests (only JavaScript)
