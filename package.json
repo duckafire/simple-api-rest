@@ -13,6 +13,13 @@
     "npm": ">=8.0.0"
   },
   "scripts": {
+    "parse": "./npm-scripts 'parse_src'",
+    "compile": "./npm-scripts 'compile_src'",
+    "start": "./npm-scripts 'start_server'",
+    "boot": "./npm-scripts 'boot_server'",
+    "grep": "./npm-scripts 'grep_in_src'",
+    "help": "./npm-scripts 'help_synopsis'",
+    "clear": "./npm-scripts 'clear_build'"
   },
   "dependencies": {
     "dotenv": "^16.6.1",

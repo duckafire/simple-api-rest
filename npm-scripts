@@ -1,0 +1,66 @@
+#!/usr/bin/env bash
+
+# camelCase: non-constants
+# snake_case: functions
+# SCREAMING_SNAKE_CASE: constants
+
+set -uo pipefail
+
+declare -r COMMAND="$1"
+declare -ra ALL_ARGS=("${@}")
+
+declare -r MAIN_JS_FILE="./build/index.js"
+declare -r SRC_DIR="./src/"
+declare -r BUILD_DIR="./build/"
+
+parse_src(){
+	npx tsc --noEmit
+}
+
+compile_src(){
+	npx tsc
+}
+
+start_server(){
+	if [[ ! -f "$MAIN_JS_FILE" ]]; then
+		echo "'$MAIN_JS_FILE' not found!"
+		exit 1
+	fi
+	node "$MAIN_JS_FILE"
+}
+
+boot_server(){
+	compile_src
+	start_server
+}
+
+grep_in_src(){
+	if [[ ${#ALL_ARGS[@]} -lt 2 ]]; then
+		echo "<exp> not specified!"
+		exit 1
+	fi
+	git grep -Pn ${ALL_ARGS[1]} -- "$SRC_DIR" || echo "[ GREP: Nothing found! ]"
+}
+
+help_synopsis(){
+	# a-z
+	echo 'boot       : compiles and then starts the server.
+clear      : deletes the "./build/" and its content.
+compile    : compiles the TypeScript code to JavaScript.
+grep <exp> : allows to seach a RegExp Pattern in "./src/".
+help       : displays this message.
+parse      : searchs syntax errors in TypeScript files.
+start      : starts the server with the compiled JavaScript.'
+}
+
+clear_build(){
+	rm -r "$BUILD_DIR"
+}
+
+if ! type "$COMMAND" &> /dev/null; then
+	echo -e "'$COMMAND' not exist!\n"
+	exit 1
+fi
+
+eval "$COMMAND"
+exit 0
